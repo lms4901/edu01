@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>독도 지식 백과 - 용어와 역사</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+        
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background-color: #f1f5f9;
+        }
+
+        .category-card {
+            transition: all 0.3s ease;
+        }
+
+        .category-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .glossary-item:hover {
+            background-color: #f8fafc;
+        }
+
+        .sticky-nav {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            margin-bottom: 4px;
+        }
+    </style>
+</head>
+<body class="text-slate-800">
+
+    <!-- Header -->
+    <header class="bg-indigo-900 text-white py-12 px-4 text-center">
+        <h1 class="text-3xl md:text-5xl font-black mb-4">독도 지식 백과</h1>
+        <p class="text-indigo-200 text-lg">국가 영역, 지리, 역사적 사료 및 인물 정리</p>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="sticky-nav bg-white shadow-md border-b border-slate-200">
+        <div class="max-w-6xl mx-auto px-4 py-3 flex flex-wrap justify-center gap-4 md:gap-8 text-sm font-bold text-slate-600">
+            <a href="#section1" class="hover:text-indigo-600 transition">#해양영역</a>
+            <a href="#section2" class="hover:text-indigo-600 transition">#지리자원</a>
+            <a href="#section3" class="hover:text-indigo-600 transition">#역사사료</a>
+            <a href="#section4" class="hover:text-indigo-600 transition">#국제관계</a>
+            <a href="#section5" class="hover:text-indigo-600 transition">#수호인물</a>
+        </div>
+    </nav>
+
+    <main class="max-w-6xl mx-auto px-4 py-12 space-y-16">
+
+        <!-- Section 1: 국가 영역 및 해양 -->
+        <section id="section1" class="scroll-mt-24">
+            <div class="flex items-center gap-3 mb-8">
+                <div class="w-10 h-10 bg-blue-600 text-white rounded-lg flex items-center justify-center">
+                    <i class="fas fa-globe-asia"></i>
+                </div>
+                <h2 class="text-2xl font-bold">1. 국가 영역 및 해양 관련 용어</h2>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- 영토 -->
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200 glossary-item">
+                    <span class="badge bg-blue-100 text-blue-700">핵심개념</span>
+                    <h3 class="text-lg font-bold mb-2">영토</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">국가의 영역이 미치는 지표상의 범위를 의미합니다.</p>
+                </div>
+                <!-- 영해 -->
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200 glossary-item">
+                    <span class="badge bg-blue-100 text-blue-700">12해리</span>
+                    <h3 class="text-lg font-bold mb-2">영해</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">해안선으로부터 보통 12해리(약 22.2km)까지의 바다로, 연안국의 주권이 미칩니다.</p>
+                </div>
+                <!-- 접속수역 -->
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200 glossary-item">
+                    <span class="badge bg-slate-100 text-slate-600">통제권</span>
+                    <h3 class="text-lg font-bold mb-2">접속수역</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">영해상의 관세 및 출입국관리 등을 위해 필요한 국가통제권을 행사하는 수역입니다.</p>
+                </div>
+                <!-- 영공 -->
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200 glossary-item">
+                    <span class="badge bg-sky-100 text-sky-700">상공</span>
+                    <h3 class="text-lg font-bold mb-2">영공</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">영토와 영해의 수직 상공으로, 보통 대기권 이내를 의미합니다.</p>
+                </div>
+                <!-- EEZ -->
+                <div class="bg-indigo-50 p-6 rounded-xl shadow-sm border border-indigo-200 glossary-item">
+                    <span class="badge bg-indigo-600 text-white">중요</span>
+                    <h3 class="text-lg font-bold mb-2 text-indigo-900">배타적 경제수역 (EEZ)</h3>
+                    <p class="text-slate-700 text-sm leading-relaxed">기선에서 200해리까지의 수역으로, 연안국이 자원 탐사 및 개발 권리를 가집니다.</p>
+                </div>
+                <!-- 중간수역 -->
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200 glossary-item">
+                    <span class="badge bg-orange-100 text-orange-700">한일공동</span>
+                    <h3 class="text-lg font-bold mb-2">중간수역</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">한일 양국의 EEZ 중첩 부분을 공동으로 관리하기 위해 설정한 잠정 수역입니다.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: 독도의 지리 및 자원 -->
+        <section id="section2" class="scroll-mt-24">
+            <div class="flex items-center gap-3 mb-8">
+                <div class="w-10 h-10 bg-emerald-600 text-white rounded-lg flex items-center justify-center">
+                    <i class="fas fa-mountain"></i>
+                </div>
+                <h2 class="text-2xl font-bold">2. 독도의 지리 및 자원 관련 용어</h2>
+            </div>
+            <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-200">
+                <table class="w-full text-left border-collapse">
+                    <thead class="bg-slate-50 border-b border-slate-200">
+                        <tr>
+                            <th class="p-4 font-bold text-slate-700">용어</th>
+                            <th class="p-4 font-bold text-slate-700">설명</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-100">
+                        <tr>
+                            <td class="p-4 font-bold text-indigo-600 w-1/4">동도와 서도</td>
+                            <td class="p-4 text-slate-600">독도를 구성하는 두 개의 주요 섬입니다.</td>
+                        </tr>
+                        <tr>
+                            <td class="p-4 font-bold text-indigo-600">물골</td>
+                            <td class="p-4 text-slate-600">서도에 위치한 독도의 주요 식수원입니다.</td>
+                        </tr>
+                        <tr>
+                            <td class="p-4 font-bold text-indigo-600">이사부길 / 안용복길</td>
+                            <td class="p-4 text-slate-600">각각 동도와 서도에 부여된 도로명 주소입니다.</td>
+                        </tr>
+                        <tr class="bg-yellow-50">
+                            <td class="p-4 font-bold text-yellow-700">가스 하이드레이트</td>
+                            <td class="p-4 text-slate-700">독도 부근 해저에 매장된 고체 천연가스 에너지원으로 '불타는 얼음'이라 불립니다.</td>
+                        </tr>
+                        <tr>
+                            <td class="p-4 font-bold text-indigo-600">조면암</td>
+                            <td class="p-4 text-slate-600">독도와 울릉도를 구성하고 있는 지질학적으로 유사한 암석입니다.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Section 3: 역사적 사료 및 문서 -->
+        <section id="section3" class="scroll-mt-24">
+            <div class="flex items-center gap-3 mb-8">
+                <div class="w-10 h-10 bg-amber-600 text-white rounded-lg flex items-center justify-center">
+                    <i class="fas fa-scroll"></i>
+                </div>
+                <h2 class="text-2xl font-bold">3. 주요 역사적 사료 및 문서</h2>
+            </div>
+            <div class="space-y-4">
+                <!-- 사료 아이템들 -->
+                <div class="flex flex-col md:flex-row gap-4 p-6 bg-white rounded-xl shadow-sm border-l-4 border-amber-500">
+                    <div class="md:w-48 font-bold text-amber-800">세종실록지리지 (1454)</div>
+                    <div class="flex-1 text-slate-600">강원도 울진현조에 우산(독도)과 무릉(울릉도) 두 섬에 대해 기록한 문서입니다.</div>
+                </div>
+                <div class="flex flex-col md:flex-row gap-4 p-6 bg-white rounded-xl shadow-sm border-l-4 border-amber-500">
+                    <div class="md:w-48 font-bold text-amber-800">신증동국여지승람 (1531)</div>
+                    <div class="flex-1 text-slate-600">우산도와 울릉도가 울진현에 속한 두 섬임을 명시한 관찬 지리지입니다.</div>
+                </div>
+                <div class="flex flex-col md:flex-row gap-4 p-6 bg-indigo-50 rounded-xl shadow-sm border-l-4 border-indigo-600">
+                    <div class="md:w-48 font-bold text-indigo-900">대한제국 칙령 제41호 (1900)</div>
+                    <div class="flex-1 text-slate-700 font-medium">독도를 '석도'로 명명하고 울릉군의 관할 구역으로 명문화하여 영유권을 선포한 핵심 문서입니다.</div>
+                </div>
+                <div class="flex flex-col md:flex-row gap-4 p-6 bg-white rounded-xl shadow-sm border-l-4 border-slate-400">
+                    <div class="md:w-48 font-bold text-slate-700">은주시청합기 (1667)</div>
+                    <div class="flex-1 text-slate-600">일본 측 기록으로, 오키섬을 경계로 삼아 독도와 울릉도가 일본 영역 밖임을 시사합니다.</div>
+                </div>
+                <div class="flex flex-col md:flex-row gap-4 p-6 bg-white rounded-xl shadow-sm border-l-4 border-green-500">
+                    <div class="md:w-48 font-bold text-green-800">태정관 지령 (1877)</div>
+                    <div class="flex-1 text-slate-600">일본 최고 행정기관이 울릉도와 독도는 일본과 관계가 없음을 공식 인정한 지령입니다.</div>
+                </div>
+                <div class="flex flex-col md:flex-row gap-4 p-6 bg-red-50 rounded-xl shadow-sm border-l-4 border-red-500">
+                    <div class="md:w-48 font-bold text-red-800">시마네현 고시 제40호 (1905)</div>
+                    <div class="flex-1 text-slate-600">일본이 독도를 강제 편입하려 시도한 고시로, 영토 침탈의 증거입니다.</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: 국제 관계 및 현대적 갈등 -->
+        <section id="section4" class="scroll-mt-24">
+            <div class="flex items-center gap-3 mb-8">
+                <div class="w-10 h-10 bg-red-600 text-white rounded-lg flex items-center justify-center">
+                    <i class="fas fa-handshake"></i>
+                </div>
+                <h2 class="text-2xl font-bold">4. 국제 관계 및 현대적 갈등 용어</h2>
+            </div>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-white p-6 rounded-2xl border border-slate-200">
+                    <h4 class="font-bold text-indigo-600 mb-2">SCAPIN 제677호 (1946)</h4>
+                    <p class="text-sm text-slate-600">연합군최고사령관 지령으로, 독도를 일본의 주권 행사 범위에서 제외하여 한국 영토로 분류했습니다.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl border border-slate-200">
+                    <h4 class="font-bold text-indigo-600 mb-2">샌프란시스코 강화조약 (1951)</h4>
+                    <p class="text-sm text-slate-600">2차 대전 이후 일본이 포기해야 할 영토 범위를 정한 평화 조약입니다.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl border border-slate-200">
+                    <h4 class="font-bold text-indigo-600 mb-2">평화선 (이승만 라인)</h4>
+                    <p class="text-sm text-slate-600">1952년 한국 정부가 대외적으로 선포한 인접 해양의 주권 경계선입니다.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl border border-slate-200">
+                    <h4 class="font-bold text-indigo-600 mb-2">실효적 지배</h4>
+                    <p class="text-sm text-slate-600">국가가 해당 영토에 대해 실제로 권리를 행사하고 관리하고 있는 상태를 말합니다.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: 독도 수호 관련 단체 및 인물 -->
+        <section id="section5" class="scroll-mt-24 pb-20">
+            <div class="flex items-center gap-3 mb-8">
+                <div class="w-10 h-10 bg-slate-800 text-white rounded-lg flex items-center justify-center">
+                    <i class="fas fa-users"></i>
+                </div>
+                <h2 class="text-2xl font-bold">5. 독도 수호 관련 단체 및 인물</h2>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white p-6 rounded-xl shadow-md text-center">
+                    <div class="w-16 h-16 bg-slate-100 rounded-full flex items-center justify-center mx-auto mb-4 text-slate-600 text-2xl">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h4 class="font-bold mb-2">독도의용수비대</h4>
+                    <p class="text-xs text-slate-500 leading-relaxed">1950년대 초 민간인들이 자발적으로 결성하여 독도를 지킨 조직입니다.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md text-center">
+                    <div class="w-16 h-16 bg-slate-100 rounded-full flex items-center justify-center mx-auto mb-4 text-slate-600 text-2xl">
+                        <i class="fas fa-user-shield"></i>
+                    </div>
+                    <h4 class="font-bold mb-2">독도경비대</h4>
+                    <p class="text-xs text-slate-500 leading-relaxed">울릉경찰서 소속으로 독도에 상주하며 경비 업무를 수행하는 경찰 조직입니다.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md text-center">
+                    <div class="w-16 h-16 bg-slate-100 rounded-full flex items-center justify-center mx-auto mb-4 text-slate-600 text-2xl">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h4 class="font-bold mb-2">최종덕</h4>
+                    <p class="text-xs text-slate-500 leading-relaxed">1981년 독도로 주소를 이전한 최초의 독도 주민입니다.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md text-center">
+                    <div class="w-16 h-16 bg-slate-100 rounded-full flex items-center justify-center mx-auto mb-4 text-slate-600 text-2xl">
+                        <i class="fas fa-anchor"></i>
+                    </div>
+                    <h4 class="font-bold mb-2">안용복</h4>
+                    <p class="text-xs text-slate-500 leading-relaxed">숙종 시대 일본에서 독도가 조선 땅임을 확약받아온 인물입니다.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-slate-900 text-slate-500 py-8 px-4 text-center">
+        <p class="text-sm">독도 교육용 자료 - 제공해주신 텍스트 기반으로 제작되었습니다.</p>
+    </footer>
+
+</body>
+</html>
