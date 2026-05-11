@@ -84,7 +84,7 @@
                 <a href="./01/index.html" class="px-3 py-1 bg-slate-100 rounded-md hover:bg-blue-100 hover:text-blue-700 transition-colors">독도연표</a>
                 <a href="./02.02.html" class="px-3 py-1 bg-slate-100 rounded-md hover:bg-blue-100 hover:text-blue-700 transition-colors">독도용어</a>
                 
-                <!-- New Media Buttons -->
+                <!-- Media Buttons -->
                 <button onclick="openMedia('image')" class="flex items-center gap-2 px-3 py-1 bg-emerald-50 text-emerald-700 border border-emerald-200 rounded-md hover:bg-emerald-100 transition-colors">
                     <i class="fas fa-image"></i> 인포그래픽보기
                 </button>
@@ -129,6 +129,15 @@
                                 <div class="distance-fill bg-slate-400" style="width: 72%;"></div>
                             </div>
                         </div>
+                        <div>
+                            <div class="flex justify-between mb-2 font-bold text-sm">
+                                <span>경북 죽변 ~ 독도</span>
+                                <span>216.8km</span>
+                            </div>
+                            <div class="distance-bar">
+                                <div class="distance-fill bg-slate-300" style="width: 100%;"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="flex-1 bg-white p-8 rounded-3xl shadow-xl border border-slate-100">
@@ -147,64 +156,174 @@
                             <p class="text-slate-600">반면, 157.5km 떨어진 일본 오키섬에서는 수평선 너머에 가려져 <strong>절대 보이지 않습니다.</strong></p>
                         </div>
                     </div>
+                    <div class="mt-8 p-4 bg-slate-50 rounded-xl border-l-4 border-blue-500">
+                        <p class="italic text-slate-500 text-sm">"울릉도에서 독도가 보이는 것은 자연스러운 생활 활동 범위였음을 의미합니다."</p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- (Other sections like Elements, EEZ, Profile, Value... remain as in your original code) -->
-        <!-- ... 생략 ... -->
+        <!-- Section 2: National Domain 3 Elements -->
+        <section id="elements" class="scroll-mt-20">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">국가 영역의 3요소</h2>
+                <p class="text-slate-600">독도 주권이 미치는 법적 범위</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-2xl shadow-lg border-b-4 border-emerald-500 card-hover">
+                    <div class="w-16 h-16 bg-emerald-100 rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fas fa-mountain text-emerald-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">영토 (Territory)</h3>
+                    <p class="text-slate-500 text-sm mb-4 italic">주권이 미치는 지표상의 범위</p>
+                    <ul class="text-slate-600 space-y-2">
+                        <li>• 동도, 서도 및 89개의 부속 도서</li>
+                        <li>• 모든 암석 및 섬 전체 면적</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-lg border-b-4 border-blue-500 card-hover">
+                    <div class="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fas fa-water text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">영해 (Sea)</h3>
+                    <p class="text-slate-500 text-sm mb-4 italic">연안국의 주권이 미치는 바다</p>
+                    <ul class="text-slate-600 space-y-2">
+                        <li>• 기선에서 <strong>12해리</strong> (약 22km)</li>
+                        <li>• 경찰권 및 재판권 직접 행사</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-lg border-b-4 border-sky-400 card-hover">
+                    <div class="w-16 h-16 bg-sky-100 rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fas fa-cloud text-sky-500 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">영공 (Air)</h3>
+                    <p class="text-slate-500 text-sm mb-4 italic">영토와 영해의 수직 상공</p>
+                    <ul class="text-slate-600 space-y-2">
+                        <li>• 대기권 이내의 하늘 범위</li>
+                        <li>• 타국 항공기 진입 시 허가 필요</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: EEZ -->
+        <section id="eez" class="scroll-mt-20 bg-blue-900 text-white p-10 rounded-3xl overflow-hidden relative">
+            <div class="relative z-10">
+                <div class="max-w-2xl">
+                    <h2 class="text-3xl font-bold mb-6">배타적 경제수역 (EEZ)</h2>
+                    <p class="text-blue-100 mb-8 leading-relaxed">
+                        영해 기선에서 최대 200해리에 이르는 바다입니다. 국가의 완전한 주권 대신 '경제적 권리'를 독점적으로 인정받는 구역입니다.
+                    </p>
+                    <div class="grid sm:grid-cols-2 gap-8">
+                        <div>
+                            <h4 class="font-bold text-yellow-400 mb-4 flex items-center gap-2"><i class="fas fa-check-circle"></i> 연안국 권리</h4>
+                            <ul class="space-y-2 text-sm text-blue-100">
+                                <li>• 어업 및 생물 자원 개발</li>
+                                <li>• 해저 광물 에너지 채굴</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-blue-300 mb-4 flex items-center gap-2"><i class="fas fa-globe"></i> 타국의 자유</h4>
+                            <ul class="space-y-2 text-sm text-blue-100">
+                                <li>• 단순 항해 및 비행의 자유</li>
+                                <li>• 해저 전선 부설 가능</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="absolute -bottom-20 -right-20 w-80 h-80 bg-blue-800 rounded-full blur-3xl opacity-50"></div>
+        </section>
+
+        <!-- Section 4: Profile -->
+        <section id="profile" class="scroll-mt-20">
+            <div class="bg-white rounded-3xl shadow-xl overflow-hidden border border-slate-100">
+                <div class="md:flex">
+                    <div class="md:w-1/3 bg-slate-900 text-white p-10 flex flex-col justify-center">
+                        <h2 class="text-3xl font-black mb-4">독도 국가 영역 프로필</h2>
+                        <div class="space-y-4">
+                            <div class="flex items-center gap-3"><div class="w-2 h-2 rounded-full bg-blue-500"></div><span class="text-sm">독도: 약 460만 년 전</span></div>
+                            <div class="flex items-center gap-3"><div class="w-2 h-2 rounded-full bg-slate-700"></div><span class="text-sm">울릉도: 약 250만 년 전</span></div>
+                        </div>
+                    </div>
+                    <div class="md:w-2/3 p-10">
+                        <div class="grid sm:grid-cols-2 gap-10">
+                            <div>
+                                <h4 class="font-bold text-slate-400 text-xs mb-2 uppercase">도로명 주소</h4>
+                                <p class="font-medium">이사부길(동도) / 안용복길(서도)</p>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-400 text-xs mb-2 uppercase">전체 면적</h4>
+                                <p class="text-2xl font-black text-blue-700">187,554㎡</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: Value -->
+        <section id="value" class="scroll-mt-20">
+            <h2 class="text-3xl font-bold mb-12 text-center">독도의 3대 가치</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="group bg-white p-8 rounded-3xl shadow-lg border border-slate-100 transition-all hover:bg-blue-600 hover:text-white">
+                    <div class="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center mb-6 group-hover:bg-blue-500"><i class="fas fa-coins text-blue-600 group-hover:text-white"></i></div>
+                    <h3 class="text-xl font-bold mb-4">경제적 가치</h3>
+                    <p class="text-sm opacity-80 leading-relaxed">• 하이드레이트 매장<br>• 황금어장 형성</p>
+                </div>
+                <div class="group bg-white p-8 rounded-3xl shadow-lg border border-slate-100 transition-all hover:bg-emerald-600 hover:text-white">
+                    <div class="w-14 h-14 bg-emerald-100 rounded-full flex items-center justify-center mb-6 group-hover:bg-emerald-500"><i class="fas fa-flask text-emerald-600 group-hover:text-white"></i></div>
+                    <h3 class="text-xl font-bold mb-4">학술적 가치</h3>
+                    <p class="text-sm opacity-80 leading-relaxed">• 생태계 보존 핵심<br>• 기후 변화 모니터링</p>
+                </div>
+                <div class="group bg-white p-8 rounded-3xl shadow-lg border border-slate-100 transition-all hover:bg-red-600 hover:text-white">
+                    <div class="w-14 h-14 bg-red-100 rounded-full flex items-center justify-center mb-6 group-hover:bg-red-500"><i class="fas fa-shield-alt text-red-600 group-hover:text-white"></i></div>
+                    <h3 class="text-xl font-bold mb-4">전략적 가치</h3>
+                    <p class="text-sm opacity-80 leading-relaxed">• 동해 방위 거점<br>• 해상 구조 기지</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-slate-100 rounded-3xl p-12 text-center">
+            <h2 class="text-2xl font-bold mb-6">"영토는 국민의 관심으로 완성됩니다."</h2>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="#" class="px-6 py-3 bg-blue-600 text-white rounded-xl font-bold hover:bg-blue-700 transition shadow-lg">독도수호대 응원하기</a>
+            </div>
+        </section>
 
     </main>
 
     <!-- Media Modal Popup -->
-    <div id="mediaModal" class="fixed inset-0 z-[100] hidden bg-black/90 flex items-center justify-center p-4">
-        <div class="modal-content-anim relative bg-white rounded-2xl overflow-hidden max-w-5xl w-full max-h-[90vh] shadow-2xl">
-            <!-- Modal Header -->
-            <div class="flex items-center justify-between p-4 border-b border-slate-100">
+    <div id="mediaModal" class="fixed inset-0 z-[100] hidden bg-black/90 flex items-center justify-center p-4 overflow-hidden">
+        <div class="modal-content-anim relative bg-white rounded-2xl overflow-hidden max-w-5xl w-full max-h-[90vh] shadow-2xl flex flex-col">
+            <div class="flex items-center justify-between p-4 border-b border-slate-100 shrink-0">
                 <h3 id="modalTitle" class="font-bold text-lg text-slate-800">미디어 보기</h3>
-                <button onclick="closeMedia()" class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-slate-100 text-slate-500 text-2xl transition">
-                    &times;
-                </button>
+                <button onclick="closeMedia()" class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-slate-100 text-slate-500 text-2xl transition">&times;</button>
             </div>
-            <!-- Modal Body -->
-            <div id="modalBody" class="p-2 flex items-center justify-center bg-slate-50 overflow-auto" style="min-height: 300px;">
-                <!-- Content will be injected here -->
-            </div>
+            <div id="modalBody" class="flex-1 p-2 flex items-center justify-center bg-slate-50 overflow-auto min-h-[300px]"></div>
         </div>
     </div>
 
     <footer class="bg-slate-900 text-slate-500 py-12 px-4 text-center text-sm">
-        <p class="mb-4">© 2024 독도 교육 가이드 - 국제법과 지리 교육 전문가 공동 제작</p>
+        <p>© 2024 독도 교육 가이드 - 국제법과 지리 교육 전문가 공동 제작</p>
     </footer>
 
     <script>
-        // Media Modal Logic
         function openMedia(type) {
             const modal = document.getElementById('mediaModal');
             const body = document.getElementById('modalBody');
             const title = document.getElementById('modalTitle');
-            
-            body.innerHTML = ''; // Clear previous content
+            body.innerHTML = '';
             modal.classList.remove('hidden');
             setTimeout(() => modal.classList.add('active', 'opacity-100'), 10);
-            document.body.style.overflow = 'hidden'; // Prevent scroll
+            document.body.style.overflow = 'hidden';
 
             if (type === 'image') {
                 title.innerHTML = '<i class="fas fa-image text-emerald-500 mr-2"></i> 독도 인포그래픽';
-                body.innerHTML = `
-                    <img src="unnamed.png" 
-                         class="max-w-full h-auto shadow-lg rounded" 
-                         alt="독도 인포그래픽"
-                         onerror="this.parentElement.innerHTML='<div class=\'p-20 text-slate-400\'>이미지 파일을 찾을 수 없습니다 (unnamed.png)</div>'">
-                `;
+                body.innerHTML = `<img src="unnamed.png" class="max-w-full h-auto rounded shadow" alt="인포그래픽" onerror="this.parentElement.innerHTML='<div class=\'p-20 text-slate-400\'>이미지 파일을 찾을 수 없습니다 (unnamed.png)</div>'">`;
             } else if (type === 'video') {
                 title.innerHTML = '<i class="fas fa-play-circle text-blue-500 mr-2"></i> 독도의 지리적 특성 동영상';
-                body.innerHTML = `
-                    <video controls autoplay class="w-full h-auto max-h-[70vh] bg-black">
-                        <source src="독도의_지리적_특성.mp4" type="video/mp4">
-                        브라우저가 비디오 재생을 지원하지 않습니다.
-                    </video>
-                `;
+                body.innerHTML = `<video controls autoplay class="w-full max-h-[70vh] bg-black"><source src="독도의_지리적_특성.mp4" type="video/mp4">지원하지 않는 브라우저입니다.</video>`;
             }
         }
 
@@ -213,31 +332,24 @@
             modal.classList.remove('active');
             setTimeout(() => {
                 modal.classList.add('hidden');
-                document.getElementById('modalBody').innerHTML = ''; // Stop video playback
+                document.getElementById('modalBody').innerHTML = '';
             }, 300);
             document.body.style.overflow = 'auto';
         }
 
-        // Close on overlay click
-        document.getElementById('mediaModal').addEventListener('click', function(e) {
-            if (e.target === this) closeMedia();
-        });
+        document.getElementById('mediaModal').addEventListener('click', function(e) { if (e.target === this) closeMedia(); });
 
-        // Animation on scroll for distance bars
-        const observerOptions = { threshold: 0.5 };
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    const fills = entry.target.querySelectorAll('.distance-fill');
-                    fills.forEach(fill => {
-                        const targetWidth = fill.style.width;
+                    entry.target.querySelectorAll('.distance-fill').forEach(fill => {
+                        const w = fill.style.width;
                         fill.style.width = '0';
-                        setTimeout(() => fill.style.width = targetWidth, 100);
+                        setTimeout(() => fill.style.width = w, 100);
                     });
                 }
             });
-        }, observerOptions);
-
+        }, { threshold: 0.5 });
         if(document.getElementById('intro')) observer.observe(document.getElementById('intro'));
     </script>
 </body>
