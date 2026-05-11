@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>독도 역사 타임라인 - 기록으로 보는 우리 땅</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+        
+        /* Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background-color: #f1f5f9;
+            color: #1e293b;
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            background-color: #1e3a8a;
+            color: #ffffff;
+            padding: 3rem 1rem;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+        }
+
+        header p {
+            color: #bfdbfe;
+            font-size: 1.125rem;
+        }
+
+        /* Navigation */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background-color: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid #e2e8f0;
+            padding: 1rem;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+        }
+
+        .nav-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .left-nav {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .nav-link-btn {
+            background: none;
+            border: none;
+            color: #64748b;
+            font-weight: 700;
+            font-size: 0.875rem;
+            text-decoration: none;
+            cursor: pointer;
+            transition: color 0.2s;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-link-btn:hover {
+            color: #2563eb;
+        }
+
+        .filter-group {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .era-btn {
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s;
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+        }
+
+        .era-btn.active {
+            background: #1e293b;
+            color: #ffffff;
+            border-color: #1e293b;
+        }
+
+        .era-btn.joseon { color: #d97706; border-color: #f59e0b; }
+        .era-btn.modern { color: #dc2626; border-color: #ef4444; }
+        .era-btn.contemporary { color: #2563eb; border-color: #3b82f6; }
+
+        /* Main Content */
+        main {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 3rem 1rem;
+        }
+
+        .timeline-container {
+            position: relative;
+        }
+
+        .timeline-line {
+            position: absolute;
+            left: 50%;
+            width: 2px;
+            height: 100%;
+            background: #cbd5e1;
+            transform: translateX(-50%);
+        }
+
+        /* Era Groups */
+        .era-group {
+            margin-bottom: 5rem;
+        }
+
+        .era-header {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .era-title {
+            padding: 0.5rem 1.5rem;
+            color: #ffffff;
+            border-radius: 9999px;
+            font-weight: 900;
+            font-size: 1.25rem;
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+        }
+
+        .bg-joseon { background-color: #f59e0b; }
+        .bg-modern { background-color: #ef4444; }
+        .bg-contemporary { background-color: #3b82f6; }
+
+        /* Timeline Items */
+        .era-item {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 3rem;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 50%;
+            width: 16px;
+            height: 16px;
+            background: #fff;
+            border: 4px solid #3b82f6;
+            border-radius: 50%;
+            transform: translate(-50%, 24px);
+            z-index: 10;
+        }
+
+        .year-label {
+            font-weight: 900;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .color-joseon { color: #d97706; }
+        .color-modern { color: #dc2626; }
+        .color-contemporary { color: #2563eb; }
+
+        .era-card {
+            background: #ffffff;
+            padding: 1.5rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+            width: 100%;
+            border-top: 8px solid transparent;
+        }
+
+        .era-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .era-card.joseon { border-top-color: #f59e0b; }
+        .era-card.modern { border-top-color: #ef4444; }
+        .era-card.contemporary { border-top-color: #3b82f6; }
+
+        .era-card h3 {
+            font-weight: 700;
+            font-size: 1.125rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .era-card p {
+            font-size: 0.875rem;
+            color: #475569;
+        }
+
+        .era-card strong { color: #1e293b; }
+
+        /* Desktop Layout (Timeline Side by Side) */
+        @media (min-width: 768px) {
+            .era-item {
+                flex-direction: row;
+                margin-bottom: 3rem;
+            }
+
+            .era-item .side-a, .era-item .side-b {
+                width: 50%;
+            }
+
+            .era-item.left .side-a { text-align: right; padding-right: 3rem; }
+            .era-item.left .side-b { padding-left: 3rem; }
+
+            .era-item.right .side-a { order: 2; padding-left: 3rem; text-align: left; }
+            .era-item.right .side-b { order: 1; padding-right: 3rem; text-align: right; }
+        }
+
+        /* Mobile Specific */
+        @media (max-width: 767px) {
+            .timeline-line { left: 20px; transform: none; }
+            .timeline-dot { left: 20px; transform: translateY(24px); }
+            .era-item { align-items: flex-start; padding-left: 50px; }
+            header h1 { font-size: 1.75rem; }
+            .nav-container { flex-direction: column; gap: 1rem; }
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0f172a;
+            color: #64748b;
+            padding: 3rem 1rem;
+            text-align: center;
+            font-size: 0.875rem;
+        }
+
+        /* Era specific highlights */
+        .highlight-card {
+            background-color: #fefce8;
+        }
+        .era-group.era-Modern .highlight-card { background-color: #fef2f2; border-left: 4px solid #ef4444; }
+        .era-group.era-Contemporary .highlight-card { background-color: #f0f9ff; border-left: 4px solid #3b82f6; }
+        .era-group.era-Joseon .highlight-card { border-left: 4px solid #f59e0b; }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>독도 역사 타임라인</h1>
+        <p>고문서부터 현대까지, 기록이 증명하는 대한민국 영토 독도</p>
+    </header>
+
+    <nav>
+        <div class="nav-container">
+            <div class="left-nav">
+                <a href="../index.html" class="nav-link-btn">
+                    <i class="fas fa-home mr-2"></i>&nbsp;홈
+                </a>
+                <button onclick="window.history.back()" class="nav-link-btn">
+                    <i class="fas fa-arrow-left mr-2"></i>&nbsp;돌아가기
+                </button>
+            </div>
+            <div class="filter-group">
+                <button onclick="filterItems('all')" class="era-btn active" id="btn-all">전체</button>
+                <button onclick="filterItems('Joseon')" class="era-btn joseon">조선</button>
+                <button onclick="filterItems('Modern')" class="era-btn modern">근대</button>
+                <button onclick="filterItems('Contemporary')" class="era-btn contemporary">현대</button>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <div class="timeline-container">
+            <div class="timeline-line"></div>
+
+            <!-- 1. 조선 시대 -->
+            <div class="era-group era-Joseon">
+                <div class="era-header">
+                    <span class="era-title bg-joseon">1. 조선 시대: 고문서와 지도의 기록</span>
+                </div>
+
+                <div class="era-item left">
+                    <div class="timeline-dot"></div>
+                    <div class="side-a"><span class="year-label color-joseon">1454년</span></div>
+                    <div class="side-b">
+                        <div class="era-card joseon">
+                            <h3>세종실록지리지</h3>
+                            <p>강원도 울진현조에 "우산(독도)과 무릉(울릉도) 두 섬이 현의 정동쪽 바다에 있으며, 두 섬이 서로 멀지 않아 날씨가 맑으면 바라볼 수 있다"고 기록되었습니다.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="era-item right">
+                    <div class="timeline-dot"></div>
+                    <div class="side-a"><span class="year-label color-joseon">1481년</span></div>
+                    <div class="side-b">
+                        <div class="era-card joseon">
+                            <h3>팔도총도</h3>
+                            <p>&lt;신증동국여지승람&gt;에 첨부된 지도로, 동해상에 울릉도와 우산도가 명확히 그려져 있습니다.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="era-item left">
+                    <div class="timeline-dot"></div>
+                    <div class="side-a"><span class="year-label color-joseon">1531~1667년</span></div>
+                    <div class="side-b">
+                        <div class="era-card joseon">
+                            <h3>신증동국여지승람 & 은주시청합기</h3>
+                            <p><strong>1531년:</strong> 울릉도와 우산도가 강원도 울진현에 속한 두 섬임을 다시 기술하였습니다.<br><br>
+                            <strong>1667년:</strong> 일본 관리의 보고서로, 일본 경계를 오키섬으로 정하여 독도가 조선 땅임을 시사했습니다.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="era-item right">
+                    <div class="timeline-dot"></div>
+                    <div class="side-a"><span class="year-label color-joseon">1693~1696년</span></div>
+                    <div class="side-b">
+                        <div class="era-card joseon highlight-card">
+                            <h3>안용복 사건과 도해 금지령</h3>
+                            <p>안용복의 영유권 주장과 일본 돗토리번의 답변서 등을 통해 일본 막부가 울릉도와 독도가 조선 땅임을 인정하고 일본인의 도해를 금지하였습니다.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="era-item left">
+                    <div class="timeline-dot"></div>
+                    <div class="side-a"><span class="year-label color-joseon">1697~1808년</span></div>
+                    <div class="side-b">
+                        <div class="era-card joseon">
+                            <h3>수토관 제도 및 만기요람</h3>
+                            <p>조선 정부는 정기적으로 수토관을 파견하여 관리했으며, '만기요람'에는 우산이 왜인들이 말하는 송도(독도)임을 명시했습니다.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. 근대 -->
+            <div class="era-group era-Modern">
+                <div class="era-header">
+                    <span class="era-title bg-modern">2. 근대: 제국주의 침략과 영유권 수호</span>
+                </div>
+
+                <div class="era-item left">
+                    <div class="timeline-dot"></div>
+                    <div class="side-a"><span class="year-label color-modern">1870~1877년</span></div>
+                    <div class="side-b">
+                        <div class="era-card modern">
+                            <h3>태정관 지령</h3>
+                            <p>일본 최고 행정기관 태정관이 "울릉도와 독도는 일본과 관계가 없음을 명심하라"는 공식 지령을 하달했습니다.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="era-item right">
+                    <div class="timeline-dot"></div>
+                    <div class="side-a"><span class="year-label color-modern">1900년 10월 25일</span></div>
+                    <div class="side-b">
+                        <div class="era-card modern highlight-card">
+                            <h3>대한제국 칙령 제41호</h3>
+                            <p>독도를 '석도'로 명명하고 울도군 관할 구역에 포함시켜 영유권을 대내외에 공식 선포한 역사적 사건입니다.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="era-item left">
+                    <div class="timeline-dot"></div>
+                    <div class="side-a"><span class="year-label color-modern">1905~1906년</span></div>
+                    <div class="side-b">
+                        <div class="era-card modern">
+                            <h3>시마네현 고시 및 의정부 지령</h3>
+                            <p>일본의 불법적인 강제 편입 조치에 대해 대한제국 의정부는 "전혀 근거가 없는 것"이라며 즉각 반박했습니다.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. 현대 -->
+            <div class="era-group era-Contemporary">
+                <div class="era-header">
+                    <span class="era-title bg-contemporary">3. 현대: 광복 이후의 관리와 갈등</span>
+                </div>
+
+                <div class="era-item right">
+                    <div class="timeline-dot"></div>
+                    <div class="side-a"><span class="year-label color-contemporary">1946년 1월 29일</span></div>
+                    <div class="side-b">
+                        <div class="era-card contemporary highlight-card">
+                            <h3>SCAPIN 제677호</h3>
+                            <p>연합군최고사령관 지령에 의해 독도가 일본 주권 범위에서 제외되어 한국 영토로 공식 분류되었습니다.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="era-item left">
+                    <div class="timeline-dot"></div>
+                    <div class="side-a"><span class="year-label color-contemporary">1951~1953년</span></div>
+                    <div class="side-b">
+                        <div class="era-card contemporary">
+                            <h3>평화선 선포와 의용수비대</h3>
+                            <p>이승만 대통령의 평화선 선포와 한국전쟁 중에도 독도를 지킨 민간 독도의용수비대의 헌신이 있었습니다.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="era-item right">
+                    <div class="timeline-dot"></div>
+                    <div class="side-a"><span class="year-label color-contemporary">1981~1998년</span></div>
+                    <div class="side-b">
+                        <div class="era-card contemporary">
+                            <h3>주민등록 이전 및 어업협정</h3>
+                            <p>1981년 최종덕 씨의 최초 거주와 1998년 신한일 어업협정 체결 등의 사건이 이어졌습니다.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="era-item left">
+                    <div class="timeline-dot"></div>
+                    <div class="side-a"><span class="year-label color-contemporary">2005~현재</span></div>
+                    <div class="side-b">
+                        <div class="era-card contemporary">
+                            <h3>확고한 주권 수호 의지</h3>
+                            <p>2006년 노무현 대통령의 특별담화와 2008년 독도연구소 설립 등을 통해 체계적인 영토 수호가 지속되고 있습니다.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 대한민국 독도 역사 타임라인 - 기록은 진실을 말합니다.</p>
+    </footer>
+
+    <script>
+        function filterItems(era) {
+            const eraGroups = document.querySelectorAll('.era-group');
+            const buttons = document.querySelectorAll('.era-btn');
+            
+            buttons.forEach(btn => {
+                btn.classList.remove('active');
+                if (
+                    (era === 'all' && btn.id === 'btn-all') ||
+                    (btn.classList.contains(era.toLowerCase()))
+                ) {
+                    btn.classList.add('active');
+                }
+            });
+
+            eraGroups.forEach(group => {
+                if (era === 'all') {
+                    group.style.display = 'block';
+                } else {
+                    if (group.classList.contains('era-' + era)) {
+                        group.style.display = 'block';
+                    } else {
+                        group.style.display = 'none';
+                    }
+                }
+            });
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('btn-all').classList.add('active');
+        });
+    </script>
+</body>
+</html>
